@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom"
 
 export default function VanDetail() {
   const param = useParams()
-  const [van, setVan] = useState()
+  const [van, setVan] = useState(null)
 
   // we rely on some external data(depends on /:id), rerun effect if param changed
   useEffect(() => {
