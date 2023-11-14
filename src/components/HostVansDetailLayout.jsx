@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
 
 export default function HostVansDetailLayout() {
   const { id } = useParams();
@@ -15,6 +15,12 @@ export default function HostVansDetailLayout() {
 
   return (
     <>
+      <Link to='..'
+        relative='path'
+        className='back-button'
+      >
+        &larr; <span>Back to all vans</span>
+      </Link>
       <div className='host-van-detail-container'>
         <div className='host-van-detail'>
           <div className='host-van-detail-highlight'>
@@ -29,20 +35,20 @@ export default function HostVansDetailLayout() {
           </div>
           <nav className='host-nav'>
             <NavLink
-              to={`/host/vans/${van.id}`}
+              to={``}
               end
               className={({ isActive }) => (isActive ? 'activeStyle' : '')}
             >
               Details
             </NavLink>
             <NavLink
-              to={`/host/vans/${van.id}/price`}
+              to={`price`}
               className={({ isActive }) => (isActive ? 'activeStyle' : '')}
             >
               Pricing
             </NavLink>
             <NavLink
-              to={`/host/vans/${van.id}/photos`}
+              to={`photos`}
               className={({ isActive }) => (isActive ? 'activeStyle' : '')}
             >
               Photos
