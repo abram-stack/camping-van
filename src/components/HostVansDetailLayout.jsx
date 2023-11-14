@@ -5,7 +5,7 @@ export default function HostVansDetailLayout() {
   const { id } = useParams();
 
   const [van, setVan] = useState({});
-  // console.log(id)
+
   useEffect(() => {
     fetch(`/api/host/vans/${id}`)
       .then((res) => res.json())
@@ -55,7 +55,7 @@ export default function HostVansDetailLayout() {
             </NavLink>
           </nav>
 
-          <Outlet />
+          <Outlet context={{van}}/>
         </div>
       </div>
     </>

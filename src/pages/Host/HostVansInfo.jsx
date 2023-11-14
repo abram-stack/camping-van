@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
-export default function HostVansDetail() {
-  const { id } = useParams()
-
-  const [van, setVan] = useState({});
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans[0]));
-  }, []);
+export default function HostVansInfo() {
+ const {van} = useOutletContext()
 
   return (
     <>
