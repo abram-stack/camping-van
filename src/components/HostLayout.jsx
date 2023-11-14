@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function HostLayout() {
   return (
-    <>
+    <div className="container">
       <nav className='host-nav'>
         <NavLink
           to='/host'
@@ -18,6 +18,12 @@ export default function HostLayout() {
           Income
         </NavLink>
         <NavLink
+          to='/host/vans'
+          className={({ isActive }) => (isActive ? 'activeStyle' : null)}
+        >
+          Vans
+        </NavLink>
+        <NavLink
           to='/host/reviews'
           className={({ isActive }) => (isActive ? 'activeStyle' : null)}
         >
@@ -25,6 +31,6 @@ export default function HostLayout() {
         </NavLink>
       </nav>
       <Outlet />
-    </>
+    </div>
   );
 }
