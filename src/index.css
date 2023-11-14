@@ -51,6 +51,7 @@ header .site-logo {
   text-decoration: none;
   border: none;
   padding: .75rem 1.375rem;
+  background-color: #FFCC8D;
   color: initial;
   font-weight: 700;
   border-radius: 5px;
@@ -79,6 +80,18 @@ header .site-logo {
   color: #161616;
   font-size: 1rem;
 }
+
+.clear-filter{
+  background-color: #FFF7ED;
+  border: 1px solid #4d4d4d;
+}
+.filter-container{
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 15px;
+}
+
+
 footer {
   background-color: #161616;
   color: #AAAAAA;

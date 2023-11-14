@@ -11,7 +11,7 @@ export default function HostVansDetailLayout() {
       .then((res) => res.json())
       .then((data) => setVan(data.vans[0]));
   }, []);
-  console.log(van);
+
 
   return (
     <>
