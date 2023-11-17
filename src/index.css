@@ -69,6 +69,13 @@ header .site-logo {
   cursor: pointer;
   font-size: 1.1rem;
 }
+
+.btn-full{
+  display: block;
+  background-color: #161616;
+  color: #FFF7ED;
+  margin: 2rem 0;
+}
 .activeStyle{
   color: #161616;
   font-weight: 700;
