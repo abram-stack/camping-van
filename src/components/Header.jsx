@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-
+import userLogo  from '../assets/images/user-circle.png'
 export default function Header() {
 
   return (
@@ -25,6 +25,11 @@ export default function Header() {
           className={({ isActive }) => (isActive ? 'activeStyle' : null)}
         >
           Vans
+        </NavLink>
+        <NavLink
+          to='/login'
+        >
+          <img src={userLogo} className="user-logo"/>
         </NavLink>
       </nav>
     </header>
