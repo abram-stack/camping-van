@@ -11,14 +11,14 @@ export default function HostVans() {
       .then(data => setVans(data.vans))
    }, [])
 
-  console.log(vans)
+
   return (
     <>
       <div className='host-vans-container'>
         <h1>Your listed vans</h1>
         <div className='host-vans'>
           {vans.map((van) => (
-            <Link to={`/host/vans/${van.id}`} key={van.id}>
+            <Link to={van.id} key={van.id}>
               <div className='host-vans-card'>
                 <img src={van.imageUrl} className='host-vans-img' />
                 <div className='host-vans-content'>
