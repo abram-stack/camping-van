@@ -74,6 +74,16 @@ header .site-logo {
   font-weight: 700;
   text-decoration: underline;
 }
+.link-button.simple.selected{
+  background-color: #E17654;
+}
+.link-button.luxury.selected{
+  background-color: #161616;
+  color: #FFF7ED;
+}
+.link-button.rugged.selected{
+  background-color: #115E59;
+}
 
 .back-button{
   text-decoration: none;

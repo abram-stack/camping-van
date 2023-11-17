@@ -37,14 +37,43 @@ export default function Vans() {
     <div className='van-list-container'>
       <h1>Explore our van options</h1>
       <div className='filter-container'>
-        <Link to='?type=simple' className='link-button'>Simple</Link>
+        <button
+          onClick={() => setSearchParams({ type: 'simple' })}
+          className={`link-button simple ${
+            typeFilter === 'simple' ? 'selected' : ''
+          }`}
+        >
+          Simple
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: 'luxury' })}
+          className={`link-button luxury ${
+            typeFilter === 'luxury' ? 'selected' : ''
+          }`}
+        >
+          Luxury
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: 'rugged' })}
+          className={`link-button rugged ${
+            typeFilter === 'rugged' ? 'selected' : ''
+          }`}
+        >
+          Rugged
+        </button>
+        { typeFilter ? <button
+          onClick={() => setSearchParams({})}
+          className='link-button clear-filter'
+        >
+          Clear filters
+        </button> : null }
+        
+        {/* <Link to='?type=simple' className='link-button'>Simple</Link>
         <Link to='?type=luxury' className='link-button'>Luxury</Link>
         <Link to='?type=rugged' className='link-button'>Rugged</Link>
-        <Link to='.'className='link-button clear-filter'>Clear filters</Link>
+        <Link to='.'className='link-button clear-filter'>Clear filters</Link> */}
       </div>
-      <div className='van-list'>
-        { vansElements}
-      </div>
+      <div className='van-list'>{vansElements}</div>
     </div>
   );
 }
