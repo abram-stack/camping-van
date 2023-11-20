@@ -2,7 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import userLogo  from '../assets/images/user-circle.png'
 export default function Header() {
 
+  function fakeLogut() {
+    localStorage.removeItem('isLoggedIn')
+  }
+
   return (
+
     <header>
       <Link className='site-logo' to='/'>
         #Vanlife
@@ -31,6 +36,7 @@ export default function Header() {
         >
           <img src={userLogo} className="user-logo"/>
         </NavLink>
+        <button onClick={fakeLogut}>X</button>
       </nav>
     </header>
   );

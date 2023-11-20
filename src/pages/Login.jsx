@@ -13,6 +13,7 @@ export default function Login() {
   
   const location = useLocation()
   const navigate = useNavigate()
+  const userFrom = location.state?.from
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -30,7 +31,8 @@ export default function Login() {
     try {
       const data = await loginUser(loginFormData)
       setError(null)
-      navigate('/host')
+      localStorage.setItem('isLoggedIn', true)
+      navigate(userFrom, {replace:true})
     } catch (error) {
       setError(error)
       console.log(error)
