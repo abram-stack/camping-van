@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState({
     email: '',
     password:''
   })
+
+  const location = useLocation()
 
   function handleChange(e) {
     const { name, value } = e.target
@@ -25,6 +27,10 @@ export default function Login() {
   return (
     <>
       <div className='login-container container'>
+        {location.state?.message && 
+          <h3 className="login-message-danger">{location.state.message}
+          </h3>
+        }
         <h1>Sign in to your account</h1>
         <form onSubmit={handleSubmit} className="login-form">
           <input

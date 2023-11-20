@@ -387,3 +387,6 @@ footer {
   color: #161616;
   text-transform: uppercase;
 }
+.login-message-danger{
+  color: #E17654;
+}
