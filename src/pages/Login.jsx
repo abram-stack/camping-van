@@ -13,7 +13,7 @@ export default function Login() {
   
   const location = useLocation()
   const navigate = useNavigate()
-  const userFrom = location.state?.from
+  const userFrom = location.state?.from || '/host'
 
   function handleChange(e) {
     const { name, value } = e.target
