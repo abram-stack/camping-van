@@ -1,4 +1,6 @@
 import reviewImage from '../../assets/images/reviews-graph.png'
+import { BsStarFill } from 'react-icons/bs';
+
 export default function Reviews() {
 
   const reviewsData = [
@@ -19,25 +21,28 @@ export default function Reviews() {
   ];
   return (
     <>
-      <div className="review-container ">
-        <div className="review-header">
+      <div className='review-container '>
+        <div className='review-header'>
           <h1>Your reviews</h1>
           <p>last 30 days</p>
         </div>
         <img src={reviewImage} className='review-image' />
         <h3>Reviews({reviewsData.length})</h3>
-        {reviewsData.map(review => 
-          (
+        {reviewsData.map((review) => (
           <div key={review.id} className='review'>
-            <p>{review.rating}</p>
+            <div className='review-stars'>
+            {[...Array(review.rating)].map((_, i) => (
+              <BsStarFill className='review-star' key={i}/>
+            ))}
+            </div>
             <div className='review-info'>
               <p>{review.name}</p>
               <p className='review-date'>{review.date}</p>
             </div>
             <p>{review.text}</p>
-          </div>)
-        )}
+          </div>
+        ))}
       </div>
     </>
-  )
+  );
 }

@@ -404,7 +404,7 @@ footer {
   text-decoration: underline;
 }
 
-.review-image{
+.review-image, .income-image{
   height: 250px;
   margin: 20px 0;
 }
@@ -422,4 +422,39 @@ footer {
 }
 .review-date{
   color: #AAAAAA;
+}
+.review-stars{
+  display: flex;
+}
+.review-star {
+  color: #ff8c38;
+  margin-right: 5px;
+}
+
+/* INCOME page */
+.income-container h1{
+  margin: 1rem 0;
+}
+.underline{
+  text-decoration: underline;
+}
+
+.income-number{
+  font-weight: 700;
+  font-size: 3rem;
+}
+.transactions-header{
+  display: flex;
+  justify-content: space-between;
+}
+.transaction{
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.transaction h2{
+  font-size: 2rem;
 }
