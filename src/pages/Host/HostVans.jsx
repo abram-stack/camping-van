@@ -6,8 +6,6 @@ export default function HostVans() {
   const [vans, setVans] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  // I think(later), it will depend on the host(which host). for now every render
- 
 
   useEffect(() => {
     async function loadVans() {

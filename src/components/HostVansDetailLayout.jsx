@@ -9,13 +9,6 @@ export default function HostVansDetailLayout() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-
-  // useEffect(() => {
-  //   fetch(`/api/host/vans/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setVan(data.vans[0]));
-  // }, []);
-
   useEffect(() => {
     async function loadVan(id) {
       setLoading(true)

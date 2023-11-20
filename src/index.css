@@ -27,6 +27,9 @@ header nav{
   display: flex;
   gap: 1rem;
 }
+.text-grey{
+  color: #4d4d4d;
+}
 /* LINKS */
 header a {
   text-decoration: none;
@@ -359,7 +362,6 @@ footer {
 
 /* LOGIN */
 .login-container{
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -457,4 +459,9 @@ footer {
 }
 .transaction h2{
   font-size: 2rem;
+}
+/* host-vans */
+.van-image{
+  height: 200px;
+  border-radius: 5px;
 }
