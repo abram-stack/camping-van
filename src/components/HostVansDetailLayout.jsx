@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
-import { getHostVans } from '../api';
+import { getVan } from '../api';
 
+// FUTURE note: This is simplified use.
+// i didnt use the host vans query to get the vans belong to a certain host,
+// as this project hasn't apply firebase auth yet
 export default function HostVansDetailLayout() {
   const { id } = useParams();
 
@@ -13,7 +16,7 @@ export default function HostVansDetailLayout() {
     async function loadVan(id) {
       setLoading(true)
       try {
-        const data = await getHostVans(id)
+        const data = await getVan(id)
         setVan(data)
       } catch (error) {
         setError(error)
