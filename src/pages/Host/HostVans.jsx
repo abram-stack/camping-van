@@ -1,17 +1,37 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { getHostVans } from "../../api"
 
 export default function HostVans() {
   const [vans, setVans] = useState([])
-
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   // I think(later), it will depend on the host(which host). for now every render
+ 
+
   useEffect(() => {
-    fetch('/api/host/vans')
-      .then(res => res.json())
-      .then(data => setVans(data.vans))
-   }, [])
+    async function loadVans() {
+      setLoading(true)
+      try {
+        const data = await getHostVans()
+        setVans(data)
+      } catch (error) {
+        setError(error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadVans()
+  },[])
+  
+  // loading && <h1>Loading vans...</h1>
+  if (loading) {
+    return <h2>loading...</h2>
+  }
 
-
+  if (error) {
+    return <h2>error occured: {error.message}</h2>
+  }
   return (
     <>
       <div className='host-vans-container'>
